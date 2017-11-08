@@ -9,6 +9,11 @@ public abstract class FishBowlInfo : MonoBehaviour
     public float forceTargetRadius;
     public bool enableForceTarget;
 
+    private void Awake()
+    {
+        CalculateRange();
+    }
+
     protected abstract void CalculateRange();
 
     public abstract Vector3 GetRandomPosInBowl();

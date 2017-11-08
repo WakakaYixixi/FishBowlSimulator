@@ -8,14 +8,9 @@ public class FishBowlCube : FishBowlInfo
 
     private Vector3 RandomPosRange;
 
-    private void Awake()
-    {
-        CalculateRange();
-    }
-
     protected override void CalculateRange()
     {
-        RandomPosRange = Vector3.Max(size - new Vector3(5, 5, 5), size * 0.8f);
+        RandomPosRange = new Vector3(Mathf.Max(size.x - 5, size.x * 0.8f), Mathf.Max(size.y - 5, size.y * 0.8f), Mathf.Max(size.z - 5, size.z * 0.8f));
     }
 
     private void OnDrawGizmos()
