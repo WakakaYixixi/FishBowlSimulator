@@ -135,7 +135,9 @@ public class FishSimu : MonoBehaviour
             GetRandomPosInBowl(false);
             return;
         }
-        var distance = Vector3.Distance(transform.position, bowl.GetForceTargetPos());
+
+        targetPos = bowl.transform.TransformPoint(bowl.GetForceTargetPos());
+        var distance = Vector3.Distance(transform.position, bowl.transform.TransformPoint(bowl.GetForceTargetPos()));
 
         //transform.LookAt(bowl.transform.TransformPoint(bowl.GetForceTargetPos()));
 
